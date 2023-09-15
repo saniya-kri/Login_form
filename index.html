@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>login page</title>
+        <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+        <div class="outer-header">
+                <div class="inner-header">
+                        <div class="header">
+                                <h1>User Login</h1>
+                        </div>
+                        <div class="login-body">
+                                <form action="home.html" method="post" name="form" onsubmit="return validated()">
+                                        <p>
+                                                <label>Email or Phone</label>
+                                                <input autocomplete="off" type="text" name="email">
+                                        </p>
+                                        <div id="email_error">Please fill up your phone or Email</div>
+                                        <p>
+                                                <label>Password</label>
+                                                <input type="password" name="password">
+                                        </p>
+                                        <div id="pass_error">Please fill up your password</div>
+                                        <P>
+                                                <input type="submit" id="submit" value="Login">
+                                        </P>
+
+                                </form>
+                        </div>
+                </div>
+        </div>
+        <script src="js/valid.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
