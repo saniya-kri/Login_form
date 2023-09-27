@@ -1,86 +1,52 @@
+const form = document.querySelector("form"),
+eField = form.querySelector(".email"),
+eInput =eField.querySelector("input"),
+pField =form.querySelector(".password"),
+pInput =pField.querySelector("input");
 
-
-
-// validation code for input
-
-
-
-// var email =document.forms['form']['email'];
-// var password =document.forms['form']['password'];
-
-
-// var email_error =document.getElementById('email_error');
-// var pass_error =document.getElementById('pass_error');
-
-// email.addEventListener('textInput', email_Verify);
-// password.addEventListener('textInput', email_Verify);
-
-// function validated(){
-//   if(email.value.length < 9){
-//        email.style.border = "1px solid red";
-//        email_error.style.display = "block";
-//        email.focus();
-//        return false;
-//   }
-//   if(password.value.length < 6){
-//       password.style.border = "1px solid red";
-//        pass_error.style.display = "block";
-//        password.focus();
-//        return false;
-//   }
-// }
-// function email_Verify(){
-//      if(email.value.length >= 8){
-//           email.style.border = "1px solid silver";
-//           email_error.style.display = "none";
-//           return true;
-//      }
-// }
-// function pass_Verify(){
-//      if(password.value.length >= 5){
-//        password.style.border = "1px solid silver";
-//           pass_error.style.display = "none";
-//           return true;
-//      }
-// }
-
-var email =document.forms['form']['email'];
-var password =document.forms['form']['password'];
-
-var email_error =document.getElementById('email_error');
-var pass_error =document.getElementById('pass_error');
-
-email.addEventListener('textInput', email_verify);
-password.addEventListener('textInput', email_verify);
-
-
-function validated(){
-   
-    if(email.value.length < 9){
-        email.style.border = "1px solid red";
-        email_error.style.display = "block";
-        email.focus();
-        return false;
+form.onsubmit =(e)=>{
+    e.preventDefault();
+    if(eInput.value ==""){
+        eField.classList.add("shake", "error");
+    }else{
+        checkEmail();
     }
-    if(password.value.length < 9){
-        password.style.border = "1px solid red";
-        pass_error.style.display = "block";
-        password.focus();
-        return false;
+    
+    if(pInput.value ==""){
+        pField.classList.add("shake" , "error");
+    }
+
+    setTimeout(()=>{
+        eField.classList.remove("shake");
+        pField.classList.remove("shake");
+    }, 500);
+
+
+    eInput.onkeyup = () => {
+      checkEmail();
+
+    }
+function checkEmail(){
+  let pattern =/^[^ ]+\.[a-z]{2,3}$/;
+        if(!eInput.value.match(pattern)){
+          eField.classList.add("error");
+          let errorTxt = eField.querySelector(".error-txt");
+          (eInput.value !="") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank";
+
+        }else{
+            eField.classList.remove("error");
+        }
+}
+    pInput.onkeyup = () => {
+        let pattern =/^[^ ]+\.[a-z]{2,3}$/;
+        if(!pInput.value.match(pattern)){
+            pField.classList.add("error");
+        }else{
+            pField.classList.remove("error");
+        }
+    }
+    if(!eField.classList.contains("error") && !pField.classList.contains("error")){
+        window.location.href="home.html";
+        console.log("Form Submitted!");
     }
 }
-
-function email_verify(){
-if(email.value.length >= 8){
-    email.style.border="1px solid silver";
-    email_error.style.display="block";
-    return true;
-}
-}
-function pass_verify(){
-    if(password.value.length >= 5){
-        password.style.border="1px solid silver";
-        pass_error.style.display="block";
-        return true;
-    }
-    }

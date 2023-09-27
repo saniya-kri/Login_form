@@ -1,58 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>login page</title>
-        <link rel="stylesheet" href="css/style.css">
-</head>
+  <body>
+  <div class="wrapper">
+    <header>Login form</header>
+    <form action="#" onsubmit="return checkEmail()">
+     <div class="field email ">
+      <div class="input-area">
+        <input type="text" placeholder="Email Address">
+        <i class="icon bi bi-envelope"></i>
+        <i class=" error error-icon bi bi-exclamation-circle"></i>
+      </div>
+      <div class="error error-txt">
+        Email can't be blank
+      </div>
+     </div>
+     <div class="field password ">
+      <div class="input-area">
+        <input type="text" placeholder="password">
+        <i class="icon bi bi-lock"></i>
+        <i class=" error error-icon bi bi-exclamation-circle"></i>
+      </div>
+      <div class=" error error-txt">
+        Password can't be blank
+      </div>
+      <div class="pass-link"><a href="#">Forgot password?</a></div>
+      <input type="submit" value="Login">
+    </form>
+    <div class="sign-up">
+      Not yet member? <a href="#">Signup now</a>
+    </div>
+  </div>
 
-<body>
+<script src="https://kit.fontawesome.com/17a6b59347.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/valid.js"></script>
 
-        <div class="outer-header">
-                <div class="inner-header">
-                        <div class="header">
-                                <h1>User Login</h1>
-                        </div>
-                        <div class="login-body">
-                                <form action="home.html" method="post" name="form" onsubmit="return validated()">
-                                        <p>
-                                                <label>Email or Phone</label>
-                                                <input autocomplete="off" type="text" name="email">
-                                        </p>
-                                        <div id="email_error">Please fill up your phone or Email</div>
-                                        <p>
-                                                <label>Password</label>
-                                                <input type="password" name="password">
-                                        </p>
-                                        <div id="pass_error">Please fill up your password</div>
-                                        <P>
-                                                <input type="submit" id="submit" value="Login">
-                                        </P>
-
-                                </form>
-                        </div>
-                </div>
-        </div>
-        <script src="js/valid.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
